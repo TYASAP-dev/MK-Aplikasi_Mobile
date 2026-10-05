@@ -1,3 +1,9 @@
+// =============================================
+// HW 2 - Bank Sampah
+// Nama : Muhammad Aditya Saputra
+// NIM : 1124160009
+// =============================================
+
 // Jenis sampah yang dapat di setor
 enum JenisSampah {
   plastik,
