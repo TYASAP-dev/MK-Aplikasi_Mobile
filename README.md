@@ -2,7 +2,7 @@
 
 Repository tugas mata kuliah **Aplikasi Mobile** menggunakan bahasa pemrograman **Dart**.
 
-## BIO Data Mahasiswa
+## Biodata Mahasiswa
 
 - **Nama:** Muhammad Aditya Saputra
 - **NIM:** 1124160009
