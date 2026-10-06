@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello Word')))
+      home: Scaffold(
+        body: Center(child: Text('Hello Word',
+            style: TextStyle(fontSize: 55.5),
+          ),
+        )
+      )
     ),
   );
 }
