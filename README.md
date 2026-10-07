@@ -1,6 +1,6 @@
 # MK-Aplikasi_Mobile
 
-Repository tugas mata kuliah **Aplikasi Mobile** menggunakan bahasa pemrograman **Dart**.
+Repository tugas mata kuliah **Aplikasi Mobile** menggunakan bahasa pemrograman **Dart** dan **Flutter**.
 
 ## Biodata Mahasiswa
 
@@ -17,11 +17,29 @@ MK-Aplikasi_Mobile
 │   ├── Main.dart
 │   └── README.md
 │
-└── P2
-    ├── Tugas Individu
-    │   ├── Main.dart
-    │   └── README.md
-    │
-    └── Tugas Kelompok
-        ├── Main.dart
-        └── README.md
+├── P2
+│   ├── Tugas Individu
+│   │   ├── Main.dart
+│   │   └── README.md
+│   │
+│   └── Tugas Kelompok
+│       ├── Main.dart
+│       └── README.md
+│
+└── P3
+    └── tukul
+        ├── android
+        ├── ios
+        ├── lib
+        │   └── main.dart
+        ├── linux
+        ├── macos
+        ├── test
+        ├── web
+        ├── windows
+        ├── .gitignore
+        ├── analysis_options.yaml
+        ├── pubspec.yaml
+        ├── pubspec.lock
+        ├── README.md
+        └── tukul.iml
