@@ -23,7 +23,7 @@ MK-Aplikasi_Mobile
 │   └── Tugas Kelompok
 │       └── Main.dart
 ├── P3
-│   └── tukul
+│   └── latihan_flutter
 │       ├── android
 │       │   ├── app
 │       │   │   ├── src
@@ -251,9 +251,9 @@ MK-Aplikasi_Mobile
 │       ├── .gitignore
 │       ├── .metadata
 │       ├── analysis_options.yaml
+│       ├── latihan_flutter.iml
 │       ├── pubspec.lock
-│       ├── pubspec.yaml
-│       └── tukul.iml
+│       └── pubspec.yaml
 └── generate_readme.py
 ```
 
