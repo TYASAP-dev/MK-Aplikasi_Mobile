@@ -244,6 +244,29 @@ class MyApp extends StatelessWidget {
       // Latihan 1 - Identitas Mahasiswa
       title: 'Aplikasi Mahasiswa',
       debugShowCheckedModeBanner: false,
+      // Latihan 2 - Tema Warna
+      theme: ThemeData.dark(),
+      home: MyHome(),
+    );
+  }
+}
+
+class MyHome extends StatelessWidget {
+  const MyHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Center(child: Text('Belajar Flutter'))),
+      body: Center(
+        child: Column(
+          children: [
+            // Latihan 1 - Identitas Mahasiswa
+            const Center(child: Text('Hello, Mahasiswa!', style: TextStyle(fontSize: 25, color: Color(0xFFFFD166), ))),
+          ],
+        ),
+      ),
+      backgroundColor: const Color(0xFF276787),
     );
   }
 }
