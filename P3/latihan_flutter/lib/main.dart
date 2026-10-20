@@ -4,6 +4,10 @@ void main() {
   runApp(const MyApp());
 }
 
+/*
+****************************************
+*     PERTEMUAN 3 - LATIHAN FLUTTER    *
+****************************************
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -218,6 +222,28 @@ class SectionTitle extends StatelessWidget {
     return Text(
       title,
       style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+    );
+  }
+}*/
+
+
+
+
+
+/*
+****************************************
+*     PERTEMUAN 4 - MATERIAL DESIGN    *
+****************************************
+*/
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // Latihan 1 - Identitas Mahasiswa
+      title: 'Aplikasi Mahasiswa',
+      debugShowCheckedModeBanner: false,
     );
   }
 }
