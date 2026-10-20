@@ -245,7 +245,12 @@ class MyApp extends StatelessWidget {
       title: 'Aplikasi Mahasiswa',
       debugShowCheckedModeBanner: false,
       // Latihan 2 - Tema Warna
-      theme: ThemeData.dark(),
+      // theme: ThemeData.dark(),
+      // Laatihan 4 - Tema Gelap
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.dark,
+
       home: MyHome(),
     );
   }
