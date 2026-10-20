@@ -226,10 +226,6 @@ class SectionTitle extends StatelessWidget {
   }
 }*/
 
-
-
-
-
 /*
 ****************************************
 *     PERTEMUAN 4 - MATERIAL DESIGN    *
@@ -250,14 +246,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.dark,
-
-      home: MyHome(),
+      home: ProfilePage(),
     );
   }
 }
 
-class MyHome extends StatelessWidget {
-  const MyHome({super.key});
+// Latihan 5 - Halaman Profile
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -268,7 +264,24 @@ class MyHome extends StatelessWidget {
         child: Column(
           children: [
             // Latihan 1 - Identitas Mahasiswa
-            const Center(child: Text('Hello, Mahasiswa!', style: TextStyle(fontSize: 25, color: Color(0xFFFFD166), ))),
+            const Center(
+              child: Text(
+                'MUHAMMAD ADITYA SAPUTRA',
+                style: TextStyle(fontSize: 25, color: Color(0xFFFFD166)),
+              ),
+            ),
+            const Center(
+              child: Text(
+                'TI 24 P SE-3',
+                style: TextStyle(fontSize: 25, color: Color(0xFFFFD166)),
+              ),
+            ),
+            const Center(
+              child: Text(
+                '(1124160009)',
+                style: TextStyle(fontSize: 25, color: Color(0xFFFFD166)),
+              ),
+            ),
           ],
         ),
       ),
