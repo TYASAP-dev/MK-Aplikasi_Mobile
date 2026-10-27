@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+// void main() {
+//   runApp(const MyApp());
+// }
 
 /*
 ****************************************
@@ -224,13 +224,12 @@ class SectionTitle extends StatelessWidget {
       style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
     );
   }
-}*/
+}
 
-/*
-****************************************
-*     PERTEMUAN 4 - MATERIAL DESIGN    *
-****************************************
-*/
+
+// ****************************************
+// *   PERTEMUAN 4 - MaterialApp DESIGN   *
+// ****************************************
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -262,6 +261,8 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(title: const Center(child: Text('Dashboard Mahasiswa'))),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             // Latihan 1 - Identitas Mahasiswa
             const Center(
@@ -278,7 +279,7 @@ class ProfilePage extends StatelessWidget {
             ),
             const Center(
               child: Text(
-                '(1124160009)',
+                '1124160009',
                 style: TextStyle(fontSize: 25, color: Color(0xFFFFD166)),
               ),
             ),
@@ -286,6 +287,177 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
       backgroundColor: const Color(0xFF276787),
+    );
+  }
+}*/
+
+/*
+****************************************
+*     PERTEMUAN 5 - Scaffold DESIGN    *
+****************************************
+*/
+
+void main() {
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LayoutRulesExample(),
+    ),
+  );
+}
+
+class LayoutRulesExample extends StatelessWidget {
+  const LayoutRulesExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Tiga Aturan Layout Flutter')),
+      body: const SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MyPages1(),
+            Divider(thickness: 2),
+            MyPages2(),
+            Divider(thickness: 2),
+            MyPages3(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyPages1 extends StatelessWidget {
+  const MyPages1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '1 & 2. Aturan Constraints dan Size',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Induk memberikan batas ukuran 100x100 hingga 200x200. '
+            'Container meminta ukuran 500x50, tetapi ukuran akhirnya '
+            'mengikuti batas yang diberikan oleh induknya.',
+          ),
+          const SizedBox(height: 16),
+          ConstrainedBox(
+            constraints: const BoxConstraints(
+              minWidth: 100,
+              maxWidth: 200,
+              minHeight: 100,
+              maxHeight: 200,
+            ),
+            child: Container(
+              width: 500,
+              height: 50,
+              color: Colors.blue,
+              alignment: Alignment.center,
+              child: const Text(
+                'Saya meminta 500x50,\ntetapi mendapat 200x100',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyPages2 extends StatelessWidget {
+  const MyPages2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '3. Aturan Posisi dengan Center',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Induk abu-abu berukuran 200x200. Kotak merah berukuran '
+            '80x80 ditempatkan di tengah menggunakan widget Center.',
+          ),
+          const SizedBox(height: 16),
+          Container(
+            width: 200,
+            height: 200,
+            color: Colors.grey.shade300,
+            child: Center(
+              child: Container(
+                width: 80,
+                height: 80,
+                color: Colors.red,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Center',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyPages3 extends StatelessWidget {
+  const MyPages3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '3. Aturan Posisi dengan Align',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Induk abu-abu berukuran 200x200. Kotak hijau berukuran '
+            '80x80 ditempatkan di pojok kanan bawah menggunakan widget Align.',
+          ),
+          const SizedBox(height: 16),
+          Container(
+            width: 200,
+            height: 200,
+            color: Colors.grey.shade300,
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: Container(
+                width: 80,
+                height: 80,
+                color: Colors.green,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Align',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
