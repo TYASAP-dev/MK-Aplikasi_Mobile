@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/profile_avatar.dart';
 import '../widgets/profile_info.dart';
+import '../widgets/profile_stats.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -28,6 +29,8 @@ class ProfilePage extends StatelessWidget {
                 role: '1124160009 (TI 24 P SE-3)',
                 onEditPressed: () {},
               ),
+              const SizedBox(height: 24),
+              const ProfileStats(),
             ],
           ),
         ),
