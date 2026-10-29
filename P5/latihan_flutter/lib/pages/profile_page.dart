@@ -15,6 +15,15 @@ class ProfilePage extends StatelessWidget {
     },
   ];
 
+  void _showEditMessage(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Fitur Edit Profil belum aktif.'),
+        duration: Duration(seconds: 2),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +43,7 @@ class ProfilePage extends StatelessWidget {
             ProfileInfo(
               name: 'Muhammad Aditya Saputra',
               role: '1124160009 (TI 24 P SE-3)',
-              onEditPressed: () {},
+              onEditPressed: () => _showEditMessage(context),
             ),
             const SizedBox(height: 16),
             const ProfileStats(),
