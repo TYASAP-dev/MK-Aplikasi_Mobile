@@ -15,8 +15,15 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Aplikasi Profil',
       theme: ThemeData(
+        useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-        useMaterial3: false,
+        scaffoldBackgroundColor: const Color(0xFFF6F8FC),
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          backgroundColor: Colors.blueAccent,
+          foregroundColor: Colors.white,
+          elevation: 0,
+        ),
       ),
       home: const ProfilePage(),
     );

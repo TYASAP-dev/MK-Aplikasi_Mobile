@@ -16,10 +16,15 @@ class ProfilePage extends StatelessWidget {
   ];
 
   void _showEditMessage(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
+    final messenger = ScaffoldMessenger.of(context);
+
+    messenger.hideCurrentSnackBar();
+
+    messenger.showSnackBar(
       const SnackBar(
         content: Text('Fitur Edit Profil belum aktif.'),
         duration: Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
       ),
     );
   }
@@ -33,43 +38,56 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            const SizedBox(height: 8),
-            const ProfileAvatar(radius: 40),
-            const SizedBox(height: 16),
-            ProfileInfo(
-              name: 'Muhammad Aditya Saputra',
-              role: '1124160009 (TI 24 P SE-3)',
-              onEditPressed: () => _showEditMessage(context),
-            ),
-            const SizedBox(height: 16),
-            const ProfileStats(),
-            const SizedBox(height: 24),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Pengalaman Kerja',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Expanded(
-              child: ListView.builder(
-                itemCount: experiences.length,
-                itemBuilder: (context, index) {
-                  final experience = experiences[index];
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 680),
+            child: ListView.builder(
+              padding: const EdgeInsets.all(16),
+              itemCount: experiences.length + 1,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(height: 12),
+                      const ProfileAvatar(radius: 44),
+                      const SizedBox(height: 16),
+                      ProfileInfo(
+                        name: 'Muhammad Aditya Saputra',
+                        role: '1124160009 (TI 24 P SE-3)',
+                        onEditPressed: () => _showEditMessage(context),
+                      ),
+                      const SizedBox(height: 24),
+                      const ProfileStats(),
+                      const SizedBox(height: 28),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Pengalaman Kerja',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                    ],
+                  );
+                }
 
-                  return ExperienceCard(
+                final experience = experiences[index - 1];
+
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: ExperienceCard(
                     position: experience['position']!,
                     company: experience['company']!,
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
-          ],
+          ),
         ),
       ),
     );

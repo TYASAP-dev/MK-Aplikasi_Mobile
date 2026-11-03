@@ -13,17 +13,41 @@ class ExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 1,
-      margin: const EdgeInsets.only(bottom: 8),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin: EdgeInsets.zero,
+      color: Colors.white,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(14),
+        side: const BorderSide(color: Color(0xFFE8EDF5)),
+      ),
       child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-        leading: const Icon(Icons.work, color: Colors.blueAccent, size: 28),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        leading: Container(
+          width: 44,
+          height: 44,
+          decoration: BoxDecoration(
+            color: const Color(0xFFEAF2FF),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: const Icon(
+            Icons.work_rounded,
+            color: Colors.blueAccent,
+            size: 24,
+          ),
+        ),
         title: Text(
           position,
-          style: const TextStyle(fontWeight: FontWeight.w600),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
         ),
-        subtitle: Text(company),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: Text(
+            company,
+            style: TextStyle(fontSize: 13, color: Colors.grey.shade600),
+          ),
+        ),
       ),
     );
   }
